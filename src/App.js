@@ -1,5 +1,7 @@
-function App() {
-  return <div className='App'>hello :)</div>;
+import Login from './components/login/login';
+
+function App({ authService }) {
+  return <Login authService={authService} />;
 }
 
 export default App;
