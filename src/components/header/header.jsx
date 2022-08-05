@@ -1,6 +1,16 @@
 import React from 'react';
 import styles from './header.module.css';
 
-const Header = ({ onLogout }) => <header>Header</header>;
+const Header = ({ onLogout }) => (
+  <header className={styles.header}>
+    {true && (
+      <button className={styles.logout} onClick={onLogout}>
+        Logout
+      </button>
+    )}
+    <img className={styles.logo} alt='logo' src='/images/logo.png' />
+    <h1 className={styles.title}>Card Maker</h1>
+  </header>
+);
 
 export default Header;
