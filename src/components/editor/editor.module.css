@@ -1,4 +1,16 @@
 .editor {
   flex-basis: 50%;
   background-color: whitesmoke;
+  padding: 0.5em 2em;
+}
+
+ul {
+  padding: 0;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.3em;
+  color: makerBlack;
 }
