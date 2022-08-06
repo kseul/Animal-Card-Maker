@@ -4,6 +4,7 @@
   width: 100%;
   background-color: makerIndigo;
   text-align: center;
+  border-radius: 0 0 1em 1em;
 }
 
 .title {
