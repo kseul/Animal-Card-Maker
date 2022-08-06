@@ -1,28 +1,57 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './card_edit_form.module.css';
 import Button from '../button/button';
 import ImageFileInput from '../../image_file_input/image_file_input';
 
-const CardEditForm = ({ card }) => {
-  const { name, age, color, type, hobby, message, theme, fileName, fileURL } =
-    card;
+const CardEditForm = ({ card, updateCard, deleteCard }) => {
+  const nameRef = useRef();
+  const typeRef = useRef();
+  const ageRef = useRef();
+  const colorRef = useRef();
+  const hobbyRef = useRef();
+  const messageRef = useRef();
 
-  const onSubmit = () => {};
+  const { name, age, color, type, hobby, message, fileName, fileURL } = card;
+
+  const onChange = (e) => {
+    if (e.currentTarget == null) {
+      return;
+    }
+    e.preventDefault();
+    updateCard({
+      ...card,
+      [e.currentTarget.name]: e.currentTarget.value,
+    });
+  };
+  const onSubmit = () => {
+    deleteCard(card);
+  };
+
   return (
     <form className={styles.form}>
       <input
+        ref={nameRef}
         className={styles.input}
         type='text'
         name='name'
-        defaultValue={name}
+        value={name}
+        onChange={onChange}
       />
       <input
+        ref={typeRef}
         className={styles.input}
         type='text'
         name='type'
-        defaultValue={type}
+        value={type}
+        onChange={onChange}
       />
-      <select className={styles.select} name='age' defaultValue={age}>
+      <select
+        ref={ageRef}
+        className={styles.select}
+        name='age'
+        value={age}
+        onChange={onChange}
+      >
         <option value='1'>1</option>
         <option value='2'>2</option>
         <option value='3'>3</option>
@@ -40,21 +69,28 @@ const CardEditForm = ({ card }) => {
         <option value='15'>15</option>
       </select>
       <input
+        ref={colorRef}
         className={styles.input}
         type='text'
         name='color'
-        defaultValue={color}
+        value={color}
+        onChange={onChange}
       />
       <input
+        ref={hobbyRef}
         className={styles.input}
         type='text'
         name='hobby'
-        defaultValue={hobby}
+        value={hobby}
+        onChange={onChange}
       />
+
       <textarea
+        ref={messageRef}
         className={styles.textarea}
         name='message'
-        defaultValue={message}
+        value={message}
+        onChange={onChange}
       />
       <div className={styles.fileInput}>
         <ImageFileInput />

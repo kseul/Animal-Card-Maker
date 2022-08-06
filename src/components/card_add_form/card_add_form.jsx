@@ -14,6 +14,7 @@ const CardAddForm = ({ onAdd }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
     const card = {
       id: Date.now(), //uuid
       name: nameRef.current.value || '',
@@ -26,6 +27,7 @@ const CardAddForm = ({ onAdd }) => {
       fileURL: '',
     };
     formRef.current.reset();
+    if (card.name === '') return;
     onAdd(card);
   };
 
