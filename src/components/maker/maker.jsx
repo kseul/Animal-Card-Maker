@@ -16,8 +16,9 @@ const Maker = ({ authService }) => {
       title: '댕댕이',
       hobby: '집 엉망으로 만들기',
       message: '다 뿌셔버리게써',
+      theme: 'light',
       fileName: 'hamong',
-      fileURL: 'hamong.png',
+      fileURL: '/images/hamong.jpeg',
     },
     {
       id: '2',
@@ -27,8 +28,9 @@ const Maker = ({ authService }) => {
       title: '댕댕이',
       hobby: '인형 망가뜨리기',
       message: '노는게 젤조앙',
+      theme: 'light',
       fileName: 'berry',
-      fileURL: 'berry.png',
+      fileURL: '/images/berry.jpeg',
     },
     {
       id: '3',
@@ -38,8 +40,9 @@ const Maker = ({ authService }) => {
       title: '댕댕이',
       hobby: '산책하기',
       message: '놀아줘 주인!',
+      theme: 'light',
       fileName: 'nalsoon',
-      fileURL: 'nalsoon.png',
+      fileURL: '/images/nalsoon.jpeg',
     },
   ]);
   const navigate = useNavigate();
