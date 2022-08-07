@@ -68,6 +68,30 @@ const Maker = ({ FileInput, authService }) => {
       fileName: 'ume',
       fileURL: '/images/ume.jpeg',
     },
+    6: {
+      id: '6',
+      name: 'DongHea',
+      age: '5',
+      color: 'white',
+      type: '슬기혜인이네 댕댕이',
+      hobby: '낮잠자기',
+      message: '희희.. 인간들 죠앙',
+      theme: 'light',
+      fileName: 'donghea',
+      fileURL: '/images/donghea.jpg',
+    },
+    7: {
+      id: '7',
+      name: 'Miko & Miru',
+      age: '7',
+      color: 'white',
+      type: '성주네 댕댕이',
+      hobby: '유과인척 하기',
+      message: 'zzz..',
+      theme: 'light',
+      fileName: 'miko & miru',
+      fileURL: '/images/mikomiru.jpeg',
+    },
   });
 
   const navigate = useNavigate();
@@ -82,12 +106,8 @@ const Maker = ({ FileInput, authService }) => {
       }
     });
   });
-  const addCard = (card) => {
-    const updated = [...cards, card];
-    setCards(updated);
-  };
 
-  const createOrupdateCard = (card) => {
+  const createOrUpdateCard = (card) => {
     setCards((cards) => {
       const updated = { ...cards };
       updated[card.id] = card;
@@ -110,8 +130,8 @@ const Maker = ({ FileInput, authService }) => {
         <Editor
           FileInput={FileInput}
           cards={cards}
-          addCard={createOrupdateCard}
-          updateCard={createOrupdateCard}
+          addCard={createOrUpdateCard}
+          updateCard={createOrUpdateCard}
           deleteCard={deleteCard}
         />
         <Preview cards={cards} />

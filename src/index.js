@@ -11,7 +11,6 @@ const imageUploader = new ImageUploader();
 const FileInput = (props) => (
   <ImageFileInput {...props} imageUplader={imageUploader} />
 );
-// 만약
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

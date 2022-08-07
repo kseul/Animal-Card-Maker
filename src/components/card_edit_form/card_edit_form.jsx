@@ -12,6 +12,14 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
 
   const { name, age, color, type, hobby, message, fileName, fileURL } = card;
 
+  const onFileChange = (file) => {
+    updateCard({
+      ...card,
+      fileName: file.name,
+      fileURL: file.url,
+    });
+  };
+
   const onChange = (e) => {
     if (e.currentTarget == null) {
       return;
@@ -22,6 +30,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       [e.currentTarget.name]: e.currentTarget.value,
     });
   };
+
   const onSubmit = () => {
     deleteCard(card);
   };
@@ -92,7 +101,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
         onChange={onChange}
       />
       <div className={styles.fileInput}>
-        <FileInput />
+        <FileInput name={name} onFileChange={onFileChange} />
       </div>
       <Button name='Delete' onClick={onSubmit} />
     </form>
