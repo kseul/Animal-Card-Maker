@@ -1,6 +1,7 @@
 @value makerIndigo, makerWhite from '../../common/colors.css';
 
 .preview {
+  /* margin-top: 7em; */
   flex-basis: 50%;
   background-color: makerWhite;
 }
