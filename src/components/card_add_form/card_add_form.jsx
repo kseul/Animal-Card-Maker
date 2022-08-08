@@ -21,7 +21,6 @@ const CardAddForm = ({ FileInput, onAdd }) => {
       fileURL: file.url,
     });
   };
-
   const onSubmit = (e) => {
     e.preventDefault();
     const card = {
@@ -37,6 +36,7 @@ const CardAddForm = ({ FileInput, onAdd }) => {
     };
     formRef.current.reset();
     setFile({ fileName: null, fileURL: null });
+    if (card.name === '') return;
     onAdd(card);
   };
 
@@ -99,7 +99,8 @@ const CardAddForm = ({ FileInput, onAdd }) => {
         placeholder='Message'
       />
       <div className={styles.fileInput}>
-        <FileInput onFileChange={onFileChange} />
+        {/* name속성을 전달하지 않으면 porps으로 받을 수가 없으므로 'No file' 로만 뜨게 됨 */}
+        <FileInput name={file.fileName} onFileChange={onFileChange} />
       </div>
       <Button name='Add' onClick={onSubmit} />
     </form>

@@ -1,9 +1,9 @@
-/* @value makerLightGrey from '../../common/colors.css'; */
-
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  display: flex;
 }
 
 .input {
@@ -12,6 +12,7 @@
 
 .button {
   width: 100%;
+  height: 100%;
   background-color: #e8e7e6;
   font-weight: bold;
   cursor: pointer;
@@ -21,4 +22,30 @@
 
 .button:hover {
   opacity: 0.8;
+}
+
+.button.grey {
+  background-color: lightgray;
+}
+
+.button.pink {
+  background-color: rgb(255, 219, 224);
+}
+
+.isLoading {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  border: 3px solid lightgray;
+  border-top: 3px solid rgb(255, 219, 224);
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
